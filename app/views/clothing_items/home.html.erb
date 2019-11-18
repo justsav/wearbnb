@@ -1,16 +1,17 @@
 <div class="container">
 <%= image_tag 'https://images.unsplash.com/photo-1490367532201-b9bc1dc483f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80', class: 'home-header' %>
 
+<div class="card bg-dark text-white card-category">
+  <img src="https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" class="card-img" alt="...">
+  <div class="card-img-overlay card-category-text">
+    <h5 class="card-title">Shoes</h5>
+    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quam atque, minus voluptatum sed distinctio, error. Nam, soluta. Doloremque, tempora.</p>
+  </div>
+</div>
+
 <% @clothing_items.each do |item| %>
   <li><%= item.category %> - <%= item.description.to_s %></li>
 <% end %>
 
-<div class="card bg-dark text-white">
-  <img src="..." class="card-img" alt="...">
-  <div class="card-img-overlay">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text">Last updated 3 mins ago</p>
-  </div>
-</div>
+
 </div>
