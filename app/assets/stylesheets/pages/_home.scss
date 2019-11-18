@@ -17,8 +17,19 @@
   }
 }
 
-.card-category-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.clickable {
+  size: 100%;
+}
+
+.card-category {
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &:hover {
+    opacity: .8;
+  }
 }
