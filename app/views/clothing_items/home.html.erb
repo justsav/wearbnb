@@ -1,2 +1,3 @@
-<h1>ClothingItems#home</h1>
-<p>Find me in app/views/clothing_items/home.html.erb</p>
+<% @clothing_items.each do |item| %>
+  <%= item.name %>
+<% end %>
