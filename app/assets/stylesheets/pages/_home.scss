@@ -4,24 +4,15 @@
   height: 70vh;
 }
 
+.card-category-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-category {
-  width: 600px;
+  width: 500px;
   height: 400px;
-
-  h5 {
-    font-size: 2em;
-  }
-
-  img {
-    size: 100%;
-  }
-}
-
-.clickable {
-  size: 100%;
-}
-
-.card-category {
 
   img {
     height: 100%;
@@ -32,4 +23,16 @@
   &:hover {
     opacity: .8;
   }
+
+  h5 {
+    font-size: 2em;
+  }
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 500px);
+  justify-content: center;
+  grid-gap: 15px;
+  margin-top: 5rem;
 }
