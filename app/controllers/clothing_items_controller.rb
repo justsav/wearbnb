@@ -15,12 +15,10 @@ class ClothingItemsController < ApplicationController
     if categories_even?(@categories)
       # first_half, @second_half | middleish
       even_category_halves(@categories)
-
     else
       # @first_half, @second_half => arr  |  @middle => str
       odd_category_halves(@categories)
     end
-    # render :nothing => true
   end
 
   private
