@@ -1,7 +1,21 @@
 <div class="container">
-<%= image_tag 'https://images.unsplash.com/photo-1490367532201-b9bc1dc483f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80', class: 'home-header' %>
+  <%= image_tag 'https://images.unsplash.com/photo-1490367532201-b9bc1dc483f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80', class: 'home-header' %>
 
-<% @clothing_items.each do |item| %>
-  <li><%= item.category %> - <%= item.description.to_s %></li>
-<% end %>
+  <div class="categories-grid">
+    <% @categories.each do |category| %>
+
+    <%= link_to clothing_items_path(filter: category) do %>
+
+    <div class="card bg-dark text-white card-category">
+      <%= image_tag "#{category}.jpg" %>
+      <div class="card-img-overlay card-category-text">
+        <h5 class="card-title"><%= category %></h5>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quam atque, minus voluptatum sed distinctio, error. Nam, soluta. Doloremque, tempora.</p>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>
+
+
