@@ -15,7 +15,7 @@
 # t.string :name, null: false
 # t.integer :price, null: false
 
-CLOTHING = ['shirt', 'pants', 'shorts', 'hat', 'shoes', 'socks', 'underwear', 'jacket']
+CLOTHING = ['shirts', 'pants', 'shorts', 'hats', 'shoes', 'socks', 'underwear', 'jackets']
 PICTURES = [ 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
              'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
              'https://images.unsplash.com/photo-1505022610485-0249ba5b3675?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',

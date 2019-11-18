@@ -12,8 +12,32 @@ class ClothingItemsController < ApplicationController
 
   def home
     @categories = ClothingItem.all.pluck(:category).uniq
-    # params[:filter].present? ? @clothing_items = ClothingItem.where(category: "shoes") : @clothing_items = ClothingItem.all
+    if categories_even?(@categories)
+      # first_half, @second_half | middleish
+      even_category_halves(@categories)
+
+    else
+      # @first_half, @second_half => arr  |  @middle => str
+      odd_category_halves(@categories)
+    end
+    # render :nothing => true
   end
 
+  private
 
+  def categories_even?(categories)
+    categories.length.even?
+  end
+
+  def even_category_halves(categories)
+    @first_half = @categories[0...(categories.length / 2) - 1]
+    @middle = @categories[(categories.length / 2) - 1]
+    @second_half = @categories[(@categories.length / 2)..-1]
+  end
+
+  def odd_category_halves(categories)
+    @first_half = @categories[0...(categories.length / 2)]
+    @middle = @categories[categories.length / 2]
+    @second_half = @categories[((categories.length / 2) + 1)..-1]
+  end
 end
