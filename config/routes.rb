@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
-  get 'reservations/index'
-  get 'reservations/show'
-  get 'reservations/new'
-  get 'reservations/create'
-  get 'reservations/edit'
-  get 'reservations/update'
-  get 'reservations/destroy'
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'clothing_items#home'
+  resources :clothing_items, only: [:index, :show] do
+    resources :reservations, except: [:destroy]
+  end
+  resources :reservations, only: [:destroy]
 end
