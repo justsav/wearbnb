@@ -1,7 +1,8 @@
 class ClothingItemsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: [:home, :index]
 
   def index
+    raise
     @clothing_items = ClothingItem.all
   end
 
@@ -10,6 +11,13 @@ class ClothingItemsController < ApplicationController
   end
 
   def home
-    @clothing_items = ClothingItem.all
+    @categories = ClothingItem.all.pluck(:category).uniq
+    params[:filter].present? ? @clothing_items = ClothingItem.where(category: "shoes") : @clothing_items = ClothingItem.all
+  end
+
+  def category
+    @clothing_items.each do |item|
+      item.category
+    end
   end
 end
