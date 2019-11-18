@@ -1,5 +1,5 @@
 class Reservation < ApplicationRecord
-  belongs_to :clothingitem
+  belongs_to :clothing_item
   belongs_to :user
 
   validates :begin_date, presence: true
