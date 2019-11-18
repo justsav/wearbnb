@@ -23,9 +23,11 @@ PICTURES = [ 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib
              'https://images.unsplash.com/photo-1556048219-bb6978360b84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80'
             ]
 
+ClothingItem.destroy_all
+
 100.times do
   ClothingItem.create(category: CLOTHING.sample,
-                    description: Faker::Hipster.sentences(number: 1),
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum id eos dolore impedit',
                     picture: PICTURES.sample,
                     name: Faker::Hipster.word,
                     price: rand(150)
