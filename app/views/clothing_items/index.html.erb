@@ -1,8 +1,27 @@
-<h1>Index Page</h1>
-<div class="container">
-<ul>
-<%= @clothing_items.each do |item| %>
-  <li><%= item.name %> - <%= item.category %> - <%= link_to 'GO', clothing_item_path(item) %></li>
-<% end %>
-</ul>
+<div class="navbar navbar-expand-sm navbar-light navbar-secondary">
+  <ul class="navbar-nav">
+    <li class="secondary-header-item">
+      <p>SHOWING <%= @clothing_items.count %> ITEMS</p>
+    </li>
+    <li class="secondary-header-item">
+      <p>ALL CLOTHING</p>
+    </li>
+  </ul>
+</div>
+<div class="clothing-container">
+  <div class="clothing-grid">
+    <%= @clothing_items.each do |item| %>
+    <div class="clothing-card">
+      <%= link_to clothing_item_path(item) do %>
+      <%= image_tag(item.picture, class: 'clothing_card_pic') %>
+      <% end %>
+      <div class="clothing-card-info">
+        <strong style="font-size: 20px"><%= link_to item.name, clothing_item_path(item) %></strong>
+        <p><%= item.category.capitalize %></p>
+        <strong>$<%= item.price %> Daily</strong>
+      </div>
+    </div>
+    <% end %>
+  </ul>
+</div>
 </div>
