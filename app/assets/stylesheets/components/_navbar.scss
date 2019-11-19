@@ -1,5 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
+  align-items: center;
   background: white;
   width: 100%;
 
@@ -35,7 +36,7 @@
     color: white;
   }
 
-  .fa-user {
+  .icon {
     color: white;
   }
 
@@ -48,4 +49,21 @@ a {
     text-decoration: none;
     opacity: .8;
   }
+}
+
+#shopping-cart {
+  font-size: 1em;
+}
+
+.icon.nav-link {
+  padding: 0;
+}
+
+
+// .icon {
+//   padding: .5rem;
+// }
+
+.sign-in-icons {
+  display: flex;
 }
