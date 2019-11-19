@@ -10,7 +10,9 @@ class ClothingItemsController < ApplicationController
   end
 
   def show
+
     @clothing_item = ClothingItem.find(params[:id])
+    @reservation = Reservation.new
 
   end
 
