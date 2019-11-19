@@ -4,13 +4,13 @@
       <p>SHOWING <%= @clothing_items.count %> ITEMS</p>
     </li>
     <li class="secondary-header-item">
-      <p>ALL CLOTHING</p>
+      <p><%= params[:filter].nil? ? "All Items" : params[:filter].upcase %></p>
     </li>
   </ul>
 </div>
 <div class="clothing-container">
   <div class="clothing-grid">
-    <%= @clothing_items.each do |item| %>
+    <% @clothing_items.each do |item| %>
     <div class="clothing-card">
       <%= link_to clothing_item_path(item) do %>
       <%= image_tag(item.picture, class: 'clothing_card_pic') %>
@@ -18,7 +18,9 @@
       <div class="clothing-card-info">
         <strong style="font-size: 20px"><%= link_to item.name, clothing_item_path(item) %></strong>
         <p><%= item.category.capitalize %></p>
+        <div class="price">
         <strong>$<%= item.price %> Daily</strong>
+        </div>
       </div>
     </div>
     <% end %>
