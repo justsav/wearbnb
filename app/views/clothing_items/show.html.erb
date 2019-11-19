@@ -3,9 +3,12 @@
     <%= image_tag @clothing_item.picture, class: 'item-img' %>
   </div>
   <div class="item-info">
-    <h3><%= @clothing_item.name.upcase %></h3>
+    <ul>
+      <li id="item-name"><h2><%= @clothing_item.name.upcase %></h3></li>
+      <li id="item-price"><h2>$<%= @clothing_item.price %></h3></li>
+    </ul>
     <p><%= @clothing_item.description %></p>
-    <p><%= @clothing_item.price %></p>
+    <p></p>
   </div>
-<h3><%= link_to 'BACK', clothing_items_path %></h3>
+  <h3><%= link_to 'BACK', clothing_items_path %></h3>
 </div>
