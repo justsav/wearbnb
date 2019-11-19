@@ -29,8 +29,8 @@ class ClothingItemsController < ApplicationController
 
   def even_category_halves(categories)
     @first_half = @categories[0...(categories.length / 2) - 1]
-    @middle = @categories[(categories.length / 2) - 1]
-    @second_half = @categories[(@categories.length / 2)..-1]
+    @middle = @categories[(categories.length / 2) - 1...(categories.length / 2) + 1]
+    @second_half = @categories[((@categories.length / 2) + 1)..-1]
   end
 
   def odd_category_halves(categories)

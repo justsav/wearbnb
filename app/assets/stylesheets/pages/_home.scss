@@ -45,16 +45,17 @@
 }
 
 .middle-category {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
+
   justify-content: center;
   margin: 25px 10px;
   width: 100vw;
-  height: 80vh;
+  height: 50%;
 }
 
 .middle-card {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   margin: auto 0;
 }

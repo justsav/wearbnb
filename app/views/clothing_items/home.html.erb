@@ -5,9 +5,7 @@
 <div class="body-container">
   <div class="categories-grid">
     <% @first_half.each do |category| %>
-
     <%= link_to clothing_items_path(filter: category) do %>
-
     <div class="card bg-dark text-white card-category">
       <%= image_tag "#{category}.jpg" %>
       <div class="card-img-overlay card-category-text">
@@ -18,21 +16,20 @@
     <% end %>
   </div>
   <div class="middle-category">
-    <%= link_to clothing_items_path(filter: @middle) do %>
-
+    <% @middle.each do |category| %>
+    <%= link_to clothing_items_path(filter: category) do %>
     <div class="card bg-dark text-white card-category middle-card">
-      <%= image_tag "#{@middle}.jpg" %>
+      <%= image_tag "#{category}.jpg" %>
       <div class="card-img-overlay card-category-text">
-        <h5 class="card-title"><%= @middle.capitalize %></h5>
+        <h5 class="card-title"><%= category.capitalize %></h5>
       </div>
     </div>
     <% end %>
+    <% end %>
   </div>
   <div class="bottom-categories-grid">
-    <%= @second_half.each do |category| %>
-
+    <% @second_half.each do |category| %>
     <%= link_to clothing_items_path(filter: category) do %>
-
     <div class="card bg-dark text-white card-category bottom-card-img">
       <%= image_tag "#{category}.jpg" %>
       <div class="card-img-overlay card-category-text">
