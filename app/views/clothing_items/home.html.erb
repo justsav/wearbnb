@@ -1,43 +1,46 @@
-<div class="container">
-  <%= image_tag 'https://images.unsplash.com/photo-1490367532201-b9bc1dc483f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80', class: 'home-header' %>
-</div>
-
-<div class="body-container">
-  <div class="categories-grid">
-    <% @first_half.each do |category| %>
-    <%= link_to clothing_items_path(filter: category) do %>
-    <div class="card bg-dark text-white card-category">
-      <%= image_tag "#{category}.jpg" %>
-      <div class="card-img-overlay card-category-text">
-        <h5 class="card-title"><%= category.capitalize %></h5>
-      </div>
-    </div>
-    <% end %>
-    <% end %>
+<div class="header-container">
+  <h1>Welcome to Wear-BnB</h1>
+  <p>The number one place for all your clothing rental needs.</p>
   </div>
-  <div class="middle-category">
-    <% @middle.each do |category| %>
-    <%= link_to clothing_items_path(filter: category) do %>
-    <div class="card bg-dark text-white card-category middle-card">
-      <%= image_tag "#{category}.jpg" %>
-      <div class="card-img-overlay card-category-text">
-        <h5 class="card-title"><%= category.capitalize %></h5>
-      </div>
-    </div>
-    <% end %>
-    <% end %>
+  <div class="headline-container">
+    <h4 class="category-headline"><i class="fas fa-chevron-circle-down"></i></h4>
   </div>
-  <div class="bottom-categories-grid">
-    <% @second_half.each do |category| %>
-    <%= link_to clothing_items_path(filter: category) do %>
-    <div class="card bg-dark text-white card-category bottom-card-img">
-      <%= image_tag "#{category}.jpg" %>
-      <div class="card-img-overlay card-category-text">
-        <h5 class="card-title"><%= category.capitalize %></h5>
+  <div class="body-container">
+    <div class="categories-grid">
+      <% @first_half.each do |category| %>
+      <%= link_to clothing_items_path(filter: category) do %>
+      <div class="card bg-dark text-white card-category">
+        <%= image_tag "#{category}.jpg" %>
+        <div class="card-img-overlay card-category-text">
+          <h5 class="card-title"><%= category.capitalize %></h5>
+        </div>
       </div>
+      <% end %>
+      <% end %>
     </div>
-    <% end %>
-    <% end %>
+    <div class="middle-category">
+      <% @middle.each do |category| %>
+      <%= link_to clothing_items_path(filter: category) do %>
+      <div class="card bg-dark text-white card-category middle-card">
+        <%= image_tag "#{category}.jpg" %>
+        <div class="card-img-overlay card-category-text">
+          <h5 class="card-title"><%= category.capitalize %></h5>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="bottom-categories-grid">
+      <% @second_half.each do |category| %>
+      <%= link_to clothing_items_path(filter: category) do %>
+      <div class="card bg-dark text-white card-category bottom-card-img">
+        <%= image_tag "#{category}.jpg" %>
+        <div class="card-img-overlay card-category-text">
+          <h5 class="card-title"><%= category.capitalize %></h5>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 
