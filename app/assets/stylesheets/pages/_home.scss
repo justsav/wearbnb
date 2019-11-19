@@ -37,23 +37,40 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, 500px);
   justify-content: center;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
 }
 
 .categories-grid:first-child {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 .middle-category {
   display: flex;
   justify-content: center;
   margin: 25px 10px;
+  width: 100vw;
   height: 80vh;
 }
 
 .middle-card {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   margin: auto 0;
+}
+
+.bottom-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 700px);
+  justify-content: center;
+  grid-gap: 1rem;
+}
+
+.bottom-card-img {
+  width: 100%;
+
+  img {
+
+  object-fit: cover;
+}
 }

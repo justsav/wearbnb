@@ -28,12 +28,12 @@
     </div>
     <% end %>
   </div>
-  <div class="categories-grid">
+  <div class="bottom-categories-grid">
     <%= @second_half.each do |category| %>
 
     <%= link_to clothing_items_path(filter: category) do %>
 
-    <div class="card bg-dark text-white card-category">
+    <div class="card bg-dark text-white card-category bottom-card-img">
       <%= image_tag "#{category}.jpg" %>
       <div class="card-img-overlay card-category-text">
         <h5 class="card-title"><%= category.capitalize %></h5>
@@ -43,3 +43,4 @@
     <% end %>
   </div>
 </div>
+
