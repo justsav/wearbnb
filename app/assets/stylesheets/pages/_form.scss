@@ -1,0 +1,36 @@
+.container-email {
+  font-family: sans-serif;
+  background-color: #fff;
+  border: 1px solid gray;
+  width: 300px;
+  height: 440px;
+  margin-top: 100px;
+  padding: 30px;
+  font-weight: 100;
+  border-radius: 5px;
+  h2 {
+    font-family: "Dancing Script", "Helvetica", "sans-serif";
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.login-bg {
+  background-image: url(/assets/logo-430f790469e1c9da4ebfde10ab1fb133f05ed77a2484563770ec0263b9c44f70.jpg);
+  background-size: cover;
+  background-position: center;
+  background-color: #c7c7c7;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-actions {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.login-links {
+  margin-top: 10px;
+  text-align: center;
+}
