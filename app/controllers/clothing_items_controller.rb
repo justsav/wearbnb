@@ -2,7 +2,11 @@ class ClothingItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
 
   def index
-    @clothing_items = ClothingItem.all
+    if params[:filter].nil?
+      @clothing_items = ClothingItem.all
+    else
+      @clothing_items = ClothingItem.where(category: params[:filter])
+    end
   end
 
   def show
