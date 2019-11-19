@@ -12,9 +12,8 @@ class ReservationsController < ApplicationController
 
   def create
     dates = params[:reservation][:begin_date].split('to')
-    begin_date = dates[0].strip
-    end_date = dates[1].strip
-
+    @begin_date = dates[0].strip
+    @end_date = dates[1].strip
   end
 
   def edit

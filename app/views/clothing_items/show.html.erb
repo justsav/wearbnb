@@ -13,8 +13,6 @@
         <li id="item-price"><h2>$<%= @clothing_item.price %></h2></li>
       </ul>
       <p><%= @clothing_item.description %></p>
-      <!-- <%= link_to clothing_item_reservations_path(@clothing_item) do %> -->
-      <!-- <button class='btn btn-outline-dark submit-button'>Add to Cart</button> -->
       <%= f.submit "Submit", class: "btn btn-outline-dark submit-button" %>
       <% end %>
       <% end %>
