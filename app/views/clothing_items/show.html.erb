@@ -1,2 +1,12 @@
-<h1>ClothingItems#show</h1>
-<p>Find me in app/views/clothing_items/show.html.erb</p>
+<div class="container">
+  <div class="item_image">
+    <%= image_tag @clothing_item.picture, class: 'home-header' %>
+  </div>
+  <div class="item_info">
+    <p><%= @clothing_item.name.upcase %></p>
+    <h1><%= @clothing_item.category.capitalize %>s > <%= @clothing_item.name.capitalize %></h1>
+    <p><%= @clothing_item.description %></p>
+    <p><%= @clothing_item.price %></p>
+  </div>
+<h3><%= link_to 'BACK', clothing_items_path %></h3>
+</div>
