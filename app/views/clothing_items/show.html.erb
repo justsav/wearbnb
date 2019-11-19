@@ -1,10 +1,9 @@
-<div class="container">
-  <div class="item_image">
-    <%= image_tag @clothing_item.picture, class: 'home-header' %>
+<div class="item-info-container">
+  <div class="item-image">
+    <%= image_tag @clothing_item.picture, class: 'item-img' %>
   </div>
-  <div class="item_info">
-    <p><%= @clothing_item.name.upcase %></p>
-    <h1><%= @clothing_item.category.capitalize %>s > <%= @clothing_item.name.capitalize %></h1>
+  <div class="item-info">
+    <h3><%= @clothing_item.name.upcase %></h3>
     <p><%= @clothing_item.description %></p>
     <p><%= @clothing_item.price %></p>
   </div>
