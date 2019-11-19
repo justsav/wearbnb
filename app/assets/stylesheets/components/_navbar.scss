@@ -7,6 +7,10 @@
     margin: 0;
     padding: 0;
   }
+
+  a {
+    color: black;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -27,7 +31,7 @@
   opacity: .8;
   transition: background-color 200ms linear;
 
-  h6 {
+  a {
     color: white;
   }
 
@@ -35,4 +39,13 @@
     color: white;
   }
 
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    opacity: .8;
+  }
 }
