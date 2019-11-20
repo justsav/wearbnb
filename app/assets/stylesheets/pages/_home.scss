@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+
+.body-container {
+  margin: 0 auto;
+}
 .header-container {
   margin: 0;
   padding: 30px;
@@ -42,7 +46,7 @@
 
   img {
     height: 100%;
-    width: 100%;
+    max-width: 100%;
     object-fit: cover;
   }
 
