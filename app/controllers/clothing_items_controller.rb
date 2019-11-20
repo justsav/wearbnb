@@ -10,19 +10,16 @@ class ClothingItemsController < ApplicationController
   end
 
   def show
-
     @clothing_item = ClothingItem.find(params[:id])
     @reservation = Reservation.new
-
+    @all_reservations = reserved_dates(@clothing_item)
   end
 
   def home
     @categories = ClothingItem.all.pluck(:category).uniq
     if categories_even?(@categories)
-      # first_half, @second_half | middleish
       even_category_halves(@categories)
     else
-      # @first_half, @second_half => arr  |  @middle => str
       odd_category_halves(@categories)
     end
   end
@@ -43,5 +40,15 @@ class ClothingItemsController < ApplicationController
     @first_half = @categories[0...(categories.length / 2)]
     @middle = @categories[categories.length / 2]
     @second_half = @categories[((categories.length / 2) + 1)..-1]
+  end
+
+  def reserved_dates(clothing_item)
+    all_reservations = []
+    clothing_item.reservations.each do |item|
+      all_reservations << (item[:begin_date].strftime("%F")..
+                       item[:end_date].strftime("%F")).to_a
+    end
+
+    all_reservations.flatten
   end
 end

@@ -2,5 +2,10 @@ import "bootstrap";
 import { initFlatPicker } from "../plugins/flatpickr";
 import { initUpdateNavbarOnScroll } from "../plugins/navbar";
 
-initFlatPicker();
+const calendar = document.getElementById('date-picker');
+
+if (calendar !== null) {
+  initFlatPicker();
+}
+
 initUpdateNavbarOnScroll();
