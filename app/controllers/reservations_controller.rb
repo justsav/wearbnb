@@ -26,8 +26,16 @@ class ReservationsController < ApplicationController
     @reservation.user = @user
     @reservation.begin_date = @begin_date
     @reservation.end_date = @end_date
-    @reservation.save
-    redirect_to clothing_items_path
+
+    if @reservation.save
+      flash[:notice] = "Your item has successfully been added to the cart!"
+      redirect_to clothing_item_path(@clothing_item)
+    else
+      flash[:notice] = "unsuccess"
+    end
+    # where to redirect? want to use modal upon success
+
+
   end
 
   def edit
