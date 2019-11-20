@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 
 .body-container {
-  margin: 0 auto;
+  margin: 0;
 }
 .header-container {
   margin: 0;
@@ -9,7 +9,6 @@
   background-image: asset-url('logo.jpg');
   background-size: cover;
   height: 100vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +28,6 @@
   margin: 0
 }
 .home-header {
-  width: 100vw;
   height: 100vh;
   background-size: cover;
 }
@@ -41,8 +39,8 @@
 }
 
 .card-category {
-  width: 500px;
-  height: 400px;
+  width: 498px;
+  height: 398px;
 
   img {
     height: 100%;
@@ -62,9 +60,10 @@
 
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 500px);
+  grid-template-columns: repeat(auto-fit, 498px);
   justify-content: center;
   grid-gap: 1rem;
+  margin: 0 auto;
 }
 
 .categories-grid:first-child {
@@ -77,19 +76,18 @@
   grid-gap: 1rem;
   justify-content: center;
   margin: 25px 10px;
-  width: 100vw;
   height: 50%;
 }
 
 .middle-card {
-  width: 100%;
+  width: 100vw;
   object-fit: cover;
   margin: auto 0;
 }
 
 .bottom-categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 500px);
+  grid-template-columns: repeat(auto-fit, 498px);
   grid-template-rows: 1fr min-content;
   justify-content: center;
   grid-gap: 1rem;
@@ -116,8 +114,6 @@
   text-align: center;
   text-decoration: underline;
   padding: 180px 0 140px 0;
-  // width: 400px;
-  // height: 200px;
 }
 
 .fas.fa-chevron-circle-down {
