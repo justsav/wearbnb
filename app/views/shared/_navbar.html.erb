@@ -10,7 +10,7 @@
       <div class="sign-in-icons">
         <li>
           <% if user_signed_in? %>
-          <%= link_to '#', class: "icon nav-link" do %>
+          <%= link_to reservations_path, class: "icon nav-link" do %>
           <i class="fas fa-shopping-cart"></i>
           <% end %>
         </li>
@@ -30,4 +30,3 @@
    </ul>
  </div>
 </div>
-

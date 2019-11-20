@@ -1,2 +1,44 @@
-<h1>Reservations#index</h1>
-<p>Find me in app/views/reservations/index.html.erb</p>
+<div class="cart-bg">
+  <div class="container-cart">
+    <div class="cart-title">
+      <h2>My Reservations</h2>
+    </div>
+    <table>
+      <thead>
+        <tr style="border-bottom: .5px solid lightgray">
+          <th class="header-cart" style="width: 200px">Clothing Item</th>
+          <th class="header-cart" style="width: 200px">Rental Dates</th>
+          <th class="header-cart" style="width: 50px">Remove</th>
+          <th class="header-cart" style="width: 50px">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @reservations.each do |res| %>
+        <tr style="border-bottom: .5px solid lightgray">
+          <td style="font-size: 20px">
+            <%= image_tag(res.clothing_item.picture, class:"cart-image") %> <%=res.clothing_item.name %>
+          </td>
+          <td style="text-align: center">
+            <p><%= res.begin_date.strftime('%b %d') %> - <%= res.end_date.strftime('%b %d %Y') %></p>
+          </td>
+          <td style="text-align: center">
+            <p><%= link_to 'X', reservation_path(res.id), method: :delete %> </p>
+          </td>
+          <td style="text-align: center">
+            <p>$<%= res.clothing_item.price %></p>
+          </td>
+        </tr>
+        <% end %>
+        <tr class="cart-subtotal">
+          <td></td><td></td>
+          <td><p>Subtotal</p></td>
+          <td><p>$<%= @subtotal %></p></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cart-action">
+    <%= link_to 'Continue Shopping', clothing_items_path, class: 'btn btn-secondary' %>
+    <%= link_to 'Checkout', clothing_items_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

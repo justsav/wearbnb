@@ -1,6 +1,10 @@
 class ReservationsController < ApplicationController
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.all.where(user_id: current_user)
+    @subtotal = 0
+    @reservations.each do |res|
+      @subtotal = res.clothing_item.price + @subtotal
+    end
   end
 
   def show
@@ -33,6 +37,9 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to reservations_path
   end
 
   private
