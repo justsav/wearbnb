@@ -16,7 +16,7 @@
 }
 
 .login-bg {
-  background-image: url("/assets/logo_blur.jpg");
+  background-image: asset-url('logo_blur.jpg');
   background-size: cover;
   background-position: center;
   background-color: #c7c7c7;
