@@ -1,5 +1,9 @@
 class ClothingItem < ApplicationRecord
   has_many :reservations
+  #  not working
+  has_many :users,
+           through: :reservations
+
   validates :category, presence: true
   validates :picture, presence: true
   validates :name, presence: true
