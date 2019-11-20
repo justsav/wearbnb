@@ -1,6 +1,5 @@
 class ClothingItem < ApplicationRecord
   has_many :reservations
-  #  not working
   has_many :users,
            through: :reservations
 
