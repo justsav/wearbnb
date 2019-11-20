@@ -15,7 +15,7 @@
 # t.string :name, null: false
 # t.integer :price, null: false
 
-CLOTHING = ['shirts', 'pants', 'shorts', 'hats', 'shoes', 'socks', 'underwear', 'jackets']
+CLOTHING = ['shorts', 'hats', 'shoes', 'socks', 'underwear', 'jackets']
 PICTURES = [ 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
              'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
              'https://images.unsplash.com/photo-1505022610485-0249ba5b3675?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
@@ -23,9 +23,100 @@ PICTURES = [ 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib
              'https://images.unsplash.com/photo-1556048219-bb6978360b84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80'
             ]
 
+
 ClothingItem.destroy_all
 
-100.times do
+
+# SHIRTS
+
+ClothingItem.create(category: 'shirts',
+                      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloremque architecto nam consequuntur ullam minus, dolor eos. Voluptate, nisi, maxime!',
+                      picture: '/assets/shirts/shirt1.jpg',
+                      name: Faker::Hipster.word,
+                      price: rand(20..150)
+                     )
+ClothingItem.create(category: 'shirts',
+                      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloremque architecto nam consequuntur ullam minus, dolor eos. Voluptate, nisi, maxime!',
+                      picture: '/assets/shirts/shirt2.jpg',
+                      name: Faker::Hipster.word,
+                      price: rand(20..150)
+                     )
+ClothingItem.create(category: 'shirts',
+                      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloremque architecto nam consequuntur ullam minus, dolor eos. Voluptate, nisi, maxime!',
+                      picture: '/assets/shirts/shirt3.jpg',
+                      name: Faker::Hipster.word,
+                      price: rand(20..150)
+                     )
+ClothingItem.create(category: 'shirts',
+                      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloremque architecto nam consequuntur ullam minus, dolor eos. Voluptate, nisi, maxime!',
+                      picture: '/assets/shirts/shirt4.jpg',
+                      name: Faker::Hipster.word,
+                      price: rand(20..150)
+                     )
+ClothingItem.create(category: 'shirts',
+                      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloremque architecto nam consequuntur ullam minus, dolor eos. Voluptate, nisi, maxime!',
+                      picture: '/assets/shirts/shirt5.jpg',
+                      name: Faker::Hipster.word,
+                      price: rand(20..150)
+                     )
+ClothingItem.create(category: 'shirts',
+                      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloremque architecto nam consequuntur ullam minus, dolor eos. Voluptate, nisi, maxime!',
+                      picture: '/assets/shirts/shirt6.jpg',
+                      name: Faker::Hipster.word,
+                      price: rand(20..150)
+                     )
+ClothingItem.create(category: 'shirts',
+                      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloremque architecto nam consequuntur ullam minus, dolor eos. Voluptate, nisi, maxime!',
+                      picture: '/assets/shirts/shirt7.jpg',
+                      name: Faker::Hipster.word,
+                      price: rand(20..150)
+                     )
+
+ClothingItem.create(category: 'shirts',
+                      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloremque architecto nam consequuntur ullam minus, dolor eos. Voluptate, nisi, maxime!',
+                      picture: '/assets/shirts/shirt8.jpg',
+                      name: Faker::Hipster.word,
+                      price: rand(20..150)
+                     )
+
+
+# PANTS
+
+
+ClothingItem.create(category: 'pants',
+                      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloremque architecto nam consequuntur ullam minus, dolor eos. Voluptate, nisi, maxime!',
+                      picture: '/assets/pants/pants1.jpg',
+                      name: Faker::Hipster.word,
+                      price: rand(20..150)
+                     )
+ClothingItem.create(category: 'pants',
+                      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloremque architecto nam consequuntur ullam minus, dolor eos. Voluptate, nisi, maxime!',
+                      picture: '/assets/pants/pants2.jpg',
+                      name: Faker::Hipster.word,
+                      price: rand(20..150)
+                     )
+ClothingItem.create(category: 'pants',
+                      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloremque architecto nam consequuntur ullam minus, dolor eos. Voluptate, nisi, maxime!',
+                      picture: '/assets/pants/pants3.jpg',
+                      name: Faker::Hipster.word,
+                      price: rand(20..150)
+                     )
+ClothingItem.create(category: 'pants',
+                      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloremque architecto nam consequuntur ullam minus, dolor eos. Voluptate, nisi, maxime!',
+                      picture: '/assets/pants/pants4.jpg',
+                      name: Faker::Hipster.word,
+                      price: rand(20..150)
+                     )
+ClothingItem.create(category: 'pants',
+                      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloremque architecto nam consequuntur ullam minus, dolor eos. Voluptate, nisi, maxime!',
+                      picture: '/assets/pants/pants5.jpg',
+                      name: Faker::Hipster.word,
+                      price: rand(20..150)
+                     )
+
+
+
+40.times do
   ClothingItem.create(category: CLOTHING.sample,
                     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum id eos dolore impedit',
                     picture: PICTURES.sample,
