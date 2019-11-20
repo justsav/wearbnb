@@ -23,7 +23,7 @@ class ReservationsController < ApplicationController
     @reservation.begin_date = @begin_date
     @reservation.end_date = @end_date
     @reservation.save
-    redirect_to clothing_items_path
+
   end
 
   def edit
