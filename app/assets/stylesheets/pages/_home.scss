@@ -39,12 +39,11 @@
 }
 
 .card-category {
-  width: 498px;
   height: 398px;
 
   img {
     height: 100%;
-    max-width: 100%;
+    width: 100%;
     object-fit: cover;
   }
 
@@ -59,11 +58,11 @@
 }
 
 .categories-grid {
+  margin: 0 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 498px);
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   grid-gap: 1rem;
-  margin: 0 auto;
 }
 
 .categories-grid:first-child {
