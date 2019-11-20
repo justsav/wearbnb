@@ -5,7 +5,7 @@
   <div class="item-info">
     <div class="calendar">
       <%= form_for [@clothing_item, @reservation] do |f| %>
-      <%= f.text_field :begin_date, id:'date-picker', placeholder: 'Choose your dates..' %>
+      <%= f.text_field :begin_date, id:'date-picker', placeholder: 'Choose your dates..', data: { 'unavailable-dates': @all_reservations } %>
     </div>
     <div class="item-contents">
       <ul>
