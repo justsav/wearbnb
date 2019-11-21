@@ -22,7 +22,7 @@ PICTURES = [ 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib
              'https://images.unsplash.com/photo-1546102597-4ac3be10560e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=626&q=80',
              'https://images.unsplash.com/photo-1556048219-bb6978360b84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80'
             ]
-
+Review.destroy_all
 Reservation.destroy_all
 ClothingItem.destroy_all
 

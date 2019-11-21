@@ -12,6 +12,7 @@ class ClothingItemsController < ApplicationController
   def show
     @clothing_item = ClothingItem.find(params[:id])
     @reservation = Reservation.new
+    @review = Review.new
     @all_reservations = reserved_dates(@clothing_item)
   end
 
