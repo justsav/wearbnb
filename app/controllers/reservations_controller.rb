@@ -2,8 +2,16 @@ class ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all.where(user_id: current_user)
     @subtotal = 0
+    @empty_cart = ""
     @reservations.each do |res|
       @subtotal = res.clothing_item.price + @subtotal
+    end
+    if @subtotal.zero?
+      @subtotal = ""
+      @subtotal_label = ""
+      @empty_cart = "No Clothing Reservations For Now"
+    else
+      @subtotal = "$" + @subtotal.to_s
     end
   end
 

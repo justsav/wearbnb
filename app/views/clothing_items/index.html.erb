@@ -4,11 +4,83 @@
       <p>SHOWING <%= @clothing_items.count %> ITEMS</p>
     </li>
     <li class="secondary-header-item">
-      <p><%= params[:filter].nil? ? "All Items" : params[:filter].upcase %></p>
+      <p><%= link_to "Show All", clothing_items_path %></p>
     </li>
   </ul>
 </div>
-<div class="clothing-container">
+
+<div class="main_content row">
+<div class="filter-sidebar col-12 col-lg-2">
+  <h2 class="sidebar_title">RENT BY</h2>
+  <div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <p>His & Hers</p>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        <p><%= link_to 'Mens', clothing_items_path(gen: 'mens') %></p>
+        <p><%= link_to 'Womens', clothing_items_path(gen: 'womens') %></p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <p>Category</p>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        <% @categories.each do |category| %>
+        <p><%= link_to "#{category}", clothing_items_path(cat: "#{category}") %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <p>Price</p>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        <p><%= link_to '$1 - $20', clothing_items_path(pri: '1_20') %></p>
+        <p><%= link_to '$21 - $50', clothing_items_path(pri: '21_50') %></p>
+        <p><%= link_to '$51 - $100', clothing_items_path(pri: '51_100') %></p>
+        <p><%= link_to '$100+', clothing_items_path(pri: '100plus') %></p>
+        <p></p>
+      </div>
+    </div>
+  </div>
+<!--     <div class="card">
+    <div class="card-header" id="headingFour">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <p>Availability</p>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+      <div class="card-body">
+        <p>Date Needed</p>
+        <p>Date Returning</p>
+      </div>
+    </div>
+  </div>
+ --></div>
+
+</div>
+<div class="clothing-container col-12 col-lg-10">
   <div class="clothing-grid">
     <% @clothing_items.each do |item| %>
     <div class="clothing-card">
@@ -17,7 +89,7 @@
       <% end %>
       <div class="clothing-card-info">
         <strong style="font-size: 20px"><%= link_to item.name, clothing_item_path(item) %></strong>
-        <p><%= item.category.capitalize %></p>
+        <p><%= item.gender.capitalize %> <%=item.category.capitalize %> from <%= item.brand %></p>
         <div class="price">
         <strong>$<%= item.price %> Daily</strong>
         </div>
@@ -25,5 +97,6 @@
     </div>
     <% end %>
   </ul>
+</div>
 </div>
 </div>
