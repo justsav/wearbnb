@@ -13,21 +13,50 @@
   font-size: 13px;
   font-weight: 600;
   justify-content: center;
-  font-family: sans-serif;
+  font-family: $body-font;
 }
 
 .secondary-header-item {
-  color: #fff;
-  background: black;
+  // border: 1px solid black;
+  color: black;
   line-height: 2;
   text-transform: uppercase;
   padding: .2em .5em;
   margin-right: 50px;
   p {
-  margin: 0px 0px 0px;
+    margin: 0px 0px 0px;
   }
+
   a {
-  color: #fff;
+    color: black;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+}
+
+.secondary-header-item:nth-child(2) {
+
+  border: .7px solid white;
+
+  &:hover {
+    opacity: .8;
+    background: white
+  }
+
+}
+
+.btn-link {
+  color: white;
+  padding: 0;
+  padding-top: 4px;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+    opacity: .8;
   }
 }
 
@@ -50,23 +79,23 @@
 .clothing-card-info {
   font-family: sans-serif;
   a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: black;
-  font-family: sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-family: $body-font;
   }
 }
 
 .clothing-card {
-    display: inline-block;
-    text-align: center;
-    background: #F4F4F4;
-    font-size: .8em;
-    bottom-padding: 10px;
-    width: 100%;
-    &:hover {
-      background: lightgray
-    }
+  display: inline-block;
+  text-align: center;
+  background: #F4F4F4;
+  font-size: .8em;
+  bottom-padding: 10px;
+  width: 100%;
+  &:hover {
+    background: lightgray
+  }
 }
 
 .clothing-card img {
@@ -97,25 +126,35 @@
   font-family: sans-serif;
   text-align: center;
   a {
-  text-decoration: none;
+    text-decoration: none;
   }
   .card-body {
     padding-top: 10px;
-  a {
-    color: black;
+    a {
+      color: black;
+    }
+
   }
-  }
+
 }
 
 .card-header {
   background: black;
   border-style: none;
+  text-align: center;
   height: 40px;
   padding: 0px;
   p {
-  color: white;
-  font-family: sans-serif;
-  text-transform: uppercase;
-  font-weight: bolder;
+    color: white;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bolder;
   }
 }
+
+#accordionExample {
+  p {
+    font-size: 12px;
+  }
+}
+
