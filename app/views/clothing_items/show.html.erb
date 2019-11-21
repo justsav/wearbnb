@@ -19,54 +19,124 @@
   </div>
   <br>
 </div>
-
 <section class="reviews-container">
   <h2>Reviews for <%= @clothing_item.name.capitalize %></h2>
-  <div class="review-container-contents">
-  <div class="add-review">
-    <!--  -->
-    <a href="#" class="add-review-btn" data-toggle="modal" data-target="#add-review-modal"><i class="fas fa-plus"></i></a>
-    <div class="modal fade" id="add-review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="add-review-modal">Add a review for <%= @clothing_item.name.capitalize %><h3>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <!-- modal -->
-          <div class="modal-body">
-            <%= simple_form_for [@clothing_item, @review] do |f|%>
-            <%= f.input :comment %>
-            <%= f.input :rating %>
-            <div class="modal-footer">
-              <%= f.submit 'Add Review', class: 'btn btn-outline-dark' %>
+  <% if @clothing_item.reviews.empty? %>
+    <div class="add-review">
+     <a href="#" class="add-review-btn" data-toggle="modal" data-target="#add-review-modal"><i class="fas fa-plus"></i></a>
+     <div class="modal fade" id="add-review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h3 class="modal-title" id="add-review-modal">Add a review for <%= @clothing_item.name.capitalize %><h3>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+               </button>
+             </div>
+             <!-- modal -->
+             <div class="modal-body">
+               <%= simple_form_for [@clothing_item, @review] do |f|%>
+               <%= f.input :comment %>
+               <%= f.input :rating %>
+               <div class="modal-footer">
+                 <%= f.submit 'Add Review', class: 'btn btn-outline-dark' %>
+               </div>
+               <% end %>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <% elsif @clothing_item.reviews.one? %>
+        <div class="review-container-contents">
+         <div class="add-review">
+           <a href="#" class="add-review-btn" data-toggle="modal" data-target="#add-review-modal"><i class="fas fa-plus"></i></a>
+           <div class="modal fade" id="add-review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+             <div class="modal-dialog modal-dialog-centered" role="document">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h3 class="modal-title" id="add-review-modal">Add a review for <%= @clothing_item.name.capitalize %></h3>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                     </button>
+                   </div>
+                   <!-- modal -->
+                   <div class="modal-body">
+                     <%= simple_form_for [@clothing_item, @review] do |f|%>
+                     <%= f.input :comment %>
+                     <%= f.input :rating %>
+                     <div class="modal-footer">
+                       <%= f.submit 'Add Review', class: 'btn btn-outline-dark' %>
+                     </div>
+                     <% end %>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="reviews-grid" id="review-grid-one">
+             <% @clothing_item.reviews.map do |review| %>
+             <div class="review-card">
+               <div class="review-card-infos">
+                 <div class="card-header">
+                   <img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png" alt="">
+                   <div class="star-rating">
+                     <% review.rating.times do%>
+                     <i class="fas fa-star"></i>
+                     <% end %>
+                   </div>
+                 </div>
+                 <h3> <%= review.reservation.user.email %> </h3>
+                 <p> <%= review.comment %> </p>
+               </div>
+             </div>
+             <% end %>
+           </div>
+     <% else %>
+     <div class="review-container-contents">
+      <div class="add-review">
+        <a href="#" class="add-review-btn" data-toggle="modal" data-target="#add-review-modal"><i class="fas fa-plus"></i></a>
+        <div class="modal fade" id="add-review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="add-review-modal">Add a review for <%= @clothing_item.name.capitalize %></h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <!-- modal -->
+                <div class="modal-body">
+                  <%= simple_form_for [@clothing_item, @review] do |f|%>
+                  <%= f.input :comment %>
+                  <%= f.input :rating %>
+                  <div class="modal-footer">
+                    <%= f.submit 'Add Review', class: 'btn btn-outline-dark' %>
+                  </div>
+                  <% end %>
+                </div>
+              </div>
             </div>
-            <% end %>
           </div>
         </div>
-      </div>
-    </div>
-    <!--  -->
-  </div>
-  <div class="reviews-grid">
-    <% @clothing_item.reviews.map do |review| %>
-    <div class="review-card">
-      <div class="review-card-infos">
-        <div class="card-header">
-          <img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png" alt="">
-          <div class="star-rating">
-          <% review.rating.times do%>
-          <i class="fas fa-star"></i>
+        <div class="reviews-grid">
+          <% @clothing_item.reviews.map do |review| %>
+          <div class="review-card">
+            <div class="review-card-infos">
+              <div class="card-header">
+                <img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png" alt="">
+                <div class="star-rating">
+                  <% review.rating.times do%>
+                  <i class="fas fa-star"></i>
+                  <% end %>
+                </div>
+              </div>
+              <h3> <%= review.reservation.user.email %> </h3>
+              <p> <%= review.comment %> </p>
+            </div>
+          </div>
           <% end %>
-          </div>
         </div>
-        <h3> <%= review.reservation.user.email %> </h3>
-        <p> <%= review.comment %> </p>
-      </div>
+      <% end %>
     </div>
-    <% end %>
-  </div>
-  </div>
-</section>
+    </section>
