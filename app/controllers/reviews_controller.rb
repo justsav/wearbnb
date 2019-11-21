@@ -12,8 +12,6 @@ class ReviewsController < ApplicationController
     @clothing_item = ClothingItem.find(params[:clothing_item_id])
     @review = Review.new(review_params)
     @user = current_user
-    # # This will show the users last date they reserved the item
-    # @reservation = current_user.reservations.find(@clothing_item.reservations.ids).last
     if user_has_reservation?
       @reservation = Reservation.find(@matching_reservations.last)
       @review.reservation = @reservation
@@ -49,4 +47,5 @@ class ReviewsController < ApplicationController
   end
 end
 
-
+## TO DO - IF USER HAS A REVIEW, THEY CAN NOT MAKE ANOTHER
+## ONLY NUMBERS 1-5 FOR REVIEW
