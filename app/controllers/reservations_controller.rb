@@ -27,7 +27,7 @@ class ReservationsController < ApplicationController
     @clothing_item = ClothingItem.find(params[:clothing_item_id])
     @user = current_user
     dates = params[:reservation][:begin_date].split('to')
-    if dates.nil?
+    if !dates.nil?
       @begin_date = dates[0].strip
       @end_date = dates[1].strip
 
