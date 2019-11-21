@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2019_11_21_150416) do
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.integer "rating", null: false
+    t.bigint "reservation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reservation_id"], name: "index_reviews_on_reservation_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -52,4 +61,5 @@ ActiveRecord::Schema.define(version: 2019_11_21_150416) do
 
   add_foreign_key "reservations", "clothing_items"
   add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "reservations"
 end

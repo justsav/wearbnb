@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_many :clothing_items,
            through: :reservations
 
+  has_many :reviews,
+           through: :reservations
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end

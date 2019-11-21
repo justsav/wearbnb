@@ -65,3 +65,19 @@ ul {
 #date-picker {
   width: 100%;
 }
+
+.reviews-container {
+  margin: 15px;
+  h1 {
+    font-family: $body-font;
+    text-align: center;
+  }
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 400px);
+  justify-content: center;
+  grid-gap: 15px;
+}
+

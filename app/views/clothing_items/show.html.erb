@@ -13,9 +13,33 @@
         <li id="item-price"><h2>$<%= @clothing_item.price %></h2></li>
       </ul>
       <p><%= @clothing_item.description %></p>
-        <%= f.submit "Add to cart", class: "btn btn-outline-dark submit-button" %>
-      </div>
-      <% end %>
+      <%= f.submit "Add to cart", class: "btn btn-outline-dark submit-button" %>
     </div>
+    <% end %>
   </div>
 
+  <%= simple_form_for [@clothing_item, @review] do |f| %>
+  <%= f.input :comment %>
+  <%= f.input :rating %>
+  <%= f.submit 'Add review', class: 'btn btn-outline-dark'  %>
+  <% end %>
+  <br>
+</div>
+
+<section class="reviews-container">
+  <h1>Reviews for <%= @clothing_item.name.capitalize %></h1>
+  <div class="reviews-grid">
+    <% @clothing_item.reviews.map do |review| %>
+    <div class="review-card">
+      <div class="review-card-infos">
+
+        <% review.rating.times do%>
+         <i class="fas fa-star"></i>
+        <% end %>
+      <h2> <%= review.reservation.user.email %> </h2>
+      <p> <%= review.comment %> </p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</section>
