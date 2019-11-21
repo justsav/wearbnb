@@ -15,9 +15,13 @@ class ReviewsController < ApplicationController
     if user_has_reservation?
       @reservation = Reservation.find(@matching_reservations.last)
       @review.reservation = @reservation
-      @review.save!
-      redirect_to clothing_item_path(@clothing_item)
-      flash[:notice] = "Thanks for adding your review!"
+      if @review.save
+        redirect_to clothing_item_path(@clothing_item)
+        flash[:notice] = "Thanks for adding your review!"
+      else
+        redirect_to clothing_item_path(@clothing_item)
+        flash[:notice] = "You must input a rating and comment"
+      end
     else
       redirect_to clothing_item_path(@clothing_item)
       flash[:notice] = "Sorry, you need to reserve this item before adding a review."
