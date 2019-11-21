@@ -17,5 +17,18 @@
       </div>
       <% end %>
     </div>
+
+    <%= simple_form_for [@clothing_item, @review] do |f| %>
+      <%= f.input :comment %>
+      <%= f.input :rating %>
+      <%= f.submit 'Add review', class: 'btn btn-outline-dark'  %>
+    <% end %>
+    <br>
+
   </div>
+
+  <% @clothing_item.reviews.map do |review| %>
+  <li><%= review.reservation.user.email %> - </li>
+  <li> <%= review.rating %> - <%= review.comment %></li>
+  <% end %>
 
