@@ -46,10 +46,6 @@ class ReservationsController < ApplicationController
       redirect_to clothing_item_path(@clothing_item)
       flash[:notice] = "You must input dates to make a reservation"
     end
-
-    # where to redirect? want to use modal upon success
-
-
   end
 
   def edit
