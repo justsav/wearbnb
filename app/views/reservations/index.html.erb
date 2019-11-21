@@ -30,10 +30,12 @@
         </tr>
         <% end %>
         <tr class="cart-subtotal">
-          <td></td><td></td>
-          <td><p>Subtotal</p></td>
-          <td><p>$<%= @subtotal %></p></td>
+          <td style="width: 370px"></td>
+          <td></td>
+          <td><p><%= @subtotal_label %></p></td>
+          <td><p><%= @subtotal %></p></td>
         </tr>
+        <tr><td colspan="4" style="text-align: center"><p><%= @empty_cart %></p></td></tr>
       </tbody>
     </table>
     <div class="cart-action">

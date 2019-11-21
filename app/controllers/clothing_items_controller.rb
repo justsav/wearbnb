@@ -2,10 +2,23 @@ class ClothingItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
 
   def index
-    if params[:filter].nil?
-      @clothing_items = ClothingItem.all
-    else
-      @clothing_items = ClothingItem.where(category: params[:filter])
+    @categories = ClothingItem.all.pluck(:category).uniq
+
+    if params[:cat].present? == true
+      @clothing_items = ClothingItem.where(category: params[:cat])
+    elsif params[:gen].present? == true
+      @clothing_items = ClothingItem.where(gender: params[:gen])
+    elsif params[:pri].present? == true
+      if params[:pri] == '1_20'
+        @clothing_items = ClothingItem.where('price <= 20')
+      elsif params[:pri] == '21_50'
+        @clothing_items = ClothingItem.where('price >= 21 and price <= 50')
+      elsif params[:pri] == '51_100'
+        @clothing_items = ClothingItem.where('price >= 51 and price <= 100')
+      else
+        @clothing_items = ClothingItem.where('price > 100')
+      end
+    else @clothing_items = ClothingItem.all
     end
   end
 
