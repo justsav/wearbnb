@@ -3,7 +3,6 @@ class ClothingItemsController < ApplicationController
 
   def index
     @categories = ClothingItem.all.pluck(:category).uniq
-
     if params[:cat].present? == true
       @clothing_items = ClothingItem.where(category: params[:cat])
     elsif params[:gen].present? == true

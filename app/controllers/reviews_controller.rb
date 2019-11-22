@@ -15,8 +15,8 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     user_has_review = previous_user_review?
     if user_has_reservation? && !user_has_review
-      @reservation = Reservation.find(@matching_reservations.last)
-      @review.reservation = @reservation
+      @reservation = @matching_reservations
+      @review.reservation = @reservation.last
       if @review.save!
         redirect_to clothing_item_path(@clothing_item)
         flash[:notice] = "Thanks for adding your review!"
@@ -50,20 +50,13 @@ class ReviewsController < ApplicationController
   end
 
   def user_has_reservation?
-    clothing_reservations = @clothing_item.reservation_ids
-    user_reservations = current_user.reservation_ids
-    @matching_reservations = clothing_reservations & user_reservations
-    @matching_reservations.any? ? @matching_reservations : false
+    @matching_reservations = Reservation.where(clothing_item_id: params[:clothing_item_id]).where(user_id: current_user)
+    @matching_reservations.any? ? true : false
   end
 
   def previous_user_review?
-    # mess with user_id and user
-    #
-    #
-    #
-    current_user_reviews = current_user.review_ids
-    clothing_review_ids = @clothing_item.review_ids
-    @matching_reviews = current_user_reviews & clothing_review_ids
+    item = ClothingItem.find(params[:clothing_item_id])
+    @matching_reviews = item.reviews.where(user_id: current_user)
     @matching_reviews.any?
   end
 end

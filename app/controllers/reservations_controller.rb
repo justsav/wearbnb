@@ -40,7 +40,7 @@ class ReservationsController < ApplicationController
         flash[:notice] = "Your item has successfully been added to the cart!"
         redirect_to clothing_item_path(@clothing_item)
       else
-        flash[:notice] = "unsuccess"
+        flash[:notice] = "There was a problem with adding this item to the cart."
       end
     else
       redirect_to clothing_item_path(@clothing_item)
