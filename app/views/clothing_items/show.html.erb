@@ -5,7 +5,7 @@
   <div class="item-info">
     <div class="calendar">
       <%= form_for [@clothing_item, @reservation] do |f| %>
-      <%= f.text_field :begin_date, id:'date-picker', placeholder: 'Choose your dates..', data: { 'unavailable-dates': @all_reservations } %>
+      <%= f.text_field :begin_date, id:'date-picker', placeholder: 'Check Dates for Availability...', data: { 'unavailable-dates': @all_reservations } %>
     </div>
     <div class="item-contents">
       <ul>
@@ -13,7 +13,11 @@
         <li id="item-price"><h2>$<%= @clothing_item.price %></h2></li>
       </ul>
       <p><%= @clothing_item.description %></p>
-      <%= f.submit "Add to cart", class: "btn btn-outline-dark submit-button" %>
+      <%= f.submit "Add to Your Cart", class: "btn btn-outline-dark submit-button" %>
+      <div id="item-return">
+      <% @button_text = "Return to All " + @clothing_item.category.capitalize %>
+      <p><%= link_to @button_text, clothing_items_path(cat: @clothing_item.category) %></p>
+      </div>
     </div>
     <% end %>
   </div>
