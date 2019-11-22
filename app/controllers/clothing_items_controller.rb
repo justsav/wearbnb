@@ -58,8 +58,10 @@ class ClothingItemsController < ApplicationController
   def reserved_dates(clothing_item)
     all_reservations = []
     clothing_item.reservations.each do |item|
-      all_reservations << (item[:begin_date].strftime("%F")..
-                       item[:end_date].strftime("%F")).to_a
+      if item.status == 'reserved'
+        all_reservations << (item[:begin_date].strftime("%F")..
+                             item[:end_date].strftime("%F")).to_a
+     end
     end
 
     all_reservations.flatten
