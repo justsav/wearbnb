@@ -111,10 +111,16 @@
 }
 
 .sidebar_title {
-  font-size: 20px;
+  font-size: 14px;
   font-family: sans-serif;
   text-align: center;
   margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.accordion {
+  position: sticky;
+  top: 40px;
 }
 
 .accordion .card {
@@ -133,9 +139,18 @@
     a {
       color: black;
     }
-
   }
+}
 
+.card-body p {
+  &:hover {
+  background: lightgray;
+  font-weight: 800;
+  }
+  &:active {
+  background: lightgray;
+  font-weight: 800;
+}
 }
 
 .card-header {
