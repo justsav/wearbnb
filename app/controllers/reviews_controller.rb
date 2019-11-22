@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "You've already made a review for this item!"
     else
       redirect_to clothing_item_path(@clothing_item)
-      flash[:notice] = "Sorry, you need to reserve this item before adding a review."
+      flash[:notice] = "Sorry, you need to pay for this item before adding a review."
     end
   end
 
@@ -51,7 +51,14 @@ class ReviewsController < ApplicationController
 
   def user_has_reservation?
     @matching_reservations = Reservation.where(clothing_item_id: params[:clothing_item_id]).where(user_id: current_user)
-    @matching_reservations.any? ? true : false
+
+    return true if @matching_reservations.any? {|r| r.status == 'reserved'}
+
+    # if @matching_reservations.none? || @matching_reservations[0].status == 'pending'
+    #   false
+    # elsif
+    #   return true
+    # end
   end
 
   def previous_user_review?
