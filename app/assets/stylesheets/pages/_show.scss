@@ -89,6 +89,12 @@ ul {
   grid-template-columns: 1fr 4fr;
 }
 
+.add-review {
+  display: flex;
+  justify-content: center;
+
+}
+
 #add-review-alone {
   display: flex;
   justify-content: center;
@@ -102,3 +108,10 @@ ul {
   grid-template-columns: 3fr 1fr;
   align-items: center;
 }
+
+#add-review-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
