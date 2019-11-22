@@ -14,6 +14,7 @@
       </thead>
       <tbody>
         <% @reservations.each do |res| %>
+        <% if res.status == 'pending' %>
         <tr style="border-bottom: .5px solid lightgray">
           <td style="font-size: 20px">
             <%= image_tag(res.clothing_item.picture, class:"cart-image") %> <%=res.clothing_item.name %>
@@ -29,6 +30,7 @@
           </td>
         </tr>
         <% end %>
+        <% end %>
         <tr class="cart-subtotal">
           <td style="width: 370px"></td>
           <td></td>
@@ -40,7 +42,7 @@
     </table>
     <div class="cart-action">
     <%= link_to 'Continue Shopping', clothing_items_path, class: 'btn btn-secondary' %>
-    <%= link_to 'Checkout', clothing_items_path, class: 'btn btn-primary' %>
+    <%= link_to 'Checkout', edit_reservation_path(@reservations), class: 'btn btn-primary' %>
     </div>
   </div>
 </div>

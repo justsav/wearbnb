@@ -4,7 +4,7 @@ class ReservationsController < ApplicationController
     @subtotal = 0
     @empty_cart = ""
     @reservations.each do |res|
-      @subtotal = res.clothing_item.price + @subtotal
+      @subtotal = res.clothing_item.price + @subtotal if res.status == 'pending'
     end
     if @subtotal.zero?
       @subtotal = ""
@@ -49,6 +49,21 @@ class ReservationsController < ApplicationController
   end
 
   def edit
+    @reservations = Reservation.all.where(user_id: current_user)
+    @pending_reservations = Reservation.all.where(status: 'pending')
+    if @pending_reservations.any?
+      @pending_reservations.map {|r| r.status = 'reserved' }
+      if @pending_reservations.each { |p| p.save! }
+        redirect_to reservations_path
+        flash[:notice] = "Your order has been processed!"
+      else
+        redirect_to reservations_path
+        flash[:notice] = "Sorry, there was a problem processing your order."
+      end
+    else
+      redirect_to reservations_path
+      flash[:notice] = "You don't have any items in your cart"
+    end
   end
 
   def update
