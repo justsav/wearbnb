@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resources :reviews, except: [:show, :destroy]
   end
 
-  resources :reservations, only: [:index, :show, :destroy]
+  resources :reservations, only: [:index, :show, :destroy, :edit]
   resources :reviews, only: [:destroy]
 end
