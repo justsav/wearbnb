@@ -7,6 +7,3 @@ class Reservation < ApplicationRecord
   validates :begin_date, presence: true
   validates :end_date, presence: true
 end
-
-
-# edit reservation with new params
