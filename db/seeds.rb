@@ -66,7 +66,7 @@ end
 # create special shirt
 ClothingItem.create(category: 'shirts',
                       description: 'Featuring a crew neck, short sleeves, a relaxed shape and a straight hem. Made in Lithuania.',
-                      picture: "https://i.imgur.com/q4GdWVG.jpg",
+                      picture: "https://res.cloudinary.com/justsav/image/upload/v1574419660/shirt2_ejk9px.jpg",
                       name: 'Viva Lithuania',
                       price: rand(150),
                       brand: BRANDS.sample,
