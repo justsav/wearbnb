@@ -25,7 +25,6 @@ class ReviewsController < ApplicationController
         flash[:notice] = "You must input a rating and comment"
       end
     elsif user_has_reservation? && user_has_review
-      # byebug
       redirect_to clothing_item_path(@clothing_item)
       flash[:notice] = "You've already made a review for this item!"
     else
@@ -53,12 +52,6 @@ class ReviewsController < ApplicationController
     @matching_reservations = Reservation.where(clothing_item_id: params[:clothing_item_id]).where(user_id: current_user)
 
     return true if @matching_reservations.any? {|r| r.status == 'reserved'}
-
-    # if @matching_reservations.none? || @matching_reservations[0].status == 'pending'
-    #   false
-    # elsif
-    #   return true
-    # end
   end
 
   def previous_user_review?
