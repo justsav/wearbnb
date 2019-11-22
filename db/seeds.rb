@@ -63,6 +63,15 @@ shirts_pics.each do |shirt|
                       gender: GENDER.sample
                       )
 end
+# create special shirt
+ClothingItem.create(category: 'shirts',
+                      description: 'Featuring a crew neck, short sleeves, a relaxed shape and a straight hem. Made in Lithuania.',
+                      picture: "https://i.imgur.com/q4GdWVG.jpg",
+                      name: 'Viva Lithuania',
+                      price: rand(150),
+                      brand: BRANDS.sample,
+                      gender: 'mens'
+                      )
 pants_pics.each do |pant|
   ClothingItem.create(category: 'pants',
                       description: Faker::Hipster.sentences(number: 3).join(" "),
