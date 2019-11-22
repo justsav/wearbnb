@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
     if user_has_reservation? && !user_has_review
       @reservation = @matching_reservations
       @review.reservation = @reservation.last
-      if @review.save!
+      if @review.save
         redirect_to clothing_item_path(@clothing_item)
         flash[:notice] = "Thanks for adding your review!"
       else
