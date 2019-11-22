@@ -15,7 +15,7 @@
       <p><%= @clothing_item.description %></p>
       <%= f.submit "Add to Your Cart", class: "btn btn-outline-dark submit-button" %>
       <div id="item-return">
-      <% @button_text = "Return to All " + @clothing_item.category.capitalize %>
+      <% @button_text = "Return to All " + @clothing_item.category %>
       <p><%= link_to @button_text, clothing_items_path(cat: @clothing_item.category) %></p>
       </div>
     </div>
