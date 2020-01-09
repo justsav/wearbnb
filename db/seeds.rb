@@ -43,20 +43,11 @@ pants_pics = ['https://images.unsplash.com/photo-1475178626620-a4d074967452?ixli
 dresses_pics = ['https://images.unsplash.com/photo-1523657139966-6a7564ebca72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=600&q=80',
                 'https://images.unsplash.com/photo-1546624431-41761337f187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=600&q=80',
                 'http://images.unsplash.com/photo-1511130558090-00af810c21b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=600&q=80',
-                'http://images.unsplash.com/photo-1496217590455-aa63a8350eea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=600&q=80',
-                # leo
-                'https://res.cloudinary.com/dguxqdu8p/image/upload/v1574435223/gabriel-sanchez-cMvtc38OnQg-unsplash_qwv66l.jpg',
-                'https://res.cloudinary.com/dguxqdu8p/image/upload/v1574435223/james-lewis-ohiyigDmlYc-unsplash_ffs8zz.jpg',
-                'https://res.cloudinary.com/dguxqdu8p/image/upload/v1574435224/oleg-ivanov-sg_gRhbYXhc-unsplash_fwmp22.jpg',
-                'https://res.cloudinary.com/dguxqdu8p/image/upload/v1574435223/dom-hill-8xcmxckL0O0-unsplash_w87m0s.jpg']
+                'http://images.unsplash.com/photo-1496217590455-aa63a8350eea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=600&q=80']
 suits_pics = ['http://images.unsplash.com/photo-1521341057461-6eb5f40b07ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=600&q=80',
               'https://images.unsplash.com/photo-1534369671220-7a1bceeaf2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=600&q=80',
               'https://images.unsplash.com/photo-1554559531-fac7e81f943d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=600&q=80',
-              'https://images.unsplash.com/photo-1559418068-807707964448?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=600&q=80',
-              # leo
-              'https://res.cloudinary.com/dguxqdu8p/image/upload/v1574435223/igor-starkov-Hea3QOjilSs-unsplash_jfdybr.jpg',
-              'https://res.cloudinary.com/dguxqdu8p/image/upload/v1574435223/afa-ah-loo-y9hlJqdD0vQ-unsplash_ywacpo.jpg',
-              'https://res.cloudinary.com/dguxqdu8p/image/upload/v1574435223/azamat-zhanisov-BtxA_wynD_A-unsplash_a8dklr.jpg']
+              'https://images.unsplash.com/photo-1559418068-807707964448?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=600&q=80']
 
 Review.destroy_all
 Reservation.destroy_all
