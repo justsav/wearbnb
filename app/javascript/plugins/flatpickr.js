@@ -12,5 +12,4 @@ const initFlatPicker = () => {
   });
 }
 
-// export { initFlatPicker };
 export { initFlatPicker };
